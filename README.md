@@ -14,7 +14,6 @@
 ## About me
 
 - Studying a **Higher Technician Degree in Multiplatform App Development (DAM)** in Spain.
-- Working as a **Developer at CEFYE** since October 2026, leading 4 software projects: an internal management system, two chatbots and the virtual classroom.
 - I enjoy building backends, designing databases and running my own infrastructure at home.
 - Currently learning: Android (Kotlin), JPA and Odoo.
 
