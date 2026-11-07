@@ -57,8 +57,8 @@
 ## GitHub stats
 
 <p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=0xPsylocybe&show_icons=true&hide_border=true&bg_color=0f111a&title_color=c792ea&text_color=a6accd&icon_color=82aaff" alt="GitHub stats">
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=0xPsylocybe&layout=compact&hide_border=true&bg_color=0f111a&title_color=c792ea&text_color=a6accd" alt="Top languages">
+  <img height="165" src="./profile/stats.svg" alt="GitHub stats">
+  <img height="165" src="./profile/top-langs.svg" alt="Top languages">
 </p>
 
 ---
