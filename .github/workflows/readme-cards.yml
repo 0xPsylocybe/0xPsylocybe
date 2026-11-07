@@ -1,0 +1,49 @@
+name: Update README cards
+
+on:
+  schedule:
+    # Choose how often the cards are regenerated (cron in UTC)
+    - cron: "0 0 * * *"
+  # Manual trigger, so the cards can be rebuilt without waiting for the schedule.
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    # Needed so the job can commit the regenerated SVGs back to the repo.
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v6
+
+      # Rendering here instead of on page view means an outage of a public
+      # stats instance can no longer break the profile.
+      - name: Generate stats card
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: stats
+          options: username=${{ github.repository_owner }}&show_icons=true&hide_border=true&bg_color=0f111a&title_color=c792ea&text_color=a6accd&icon_color=82aaff
+          path: profile/stats.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # Keep the last good card instead of committing an error card on API failures.
+          fail_on_error: true
+
+      - name: Generate top languages card
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: top-langs
+          options: username=${{ github.repository_owner }}&layout=compact&hide_border=true&bg_color=0f111a&title_color=c792ea&text_color=a6accd
+          path: profile/top-langs.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fail_on_error: true
+
+      - name: Commit cards
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add profile/*.svg
+          # Exit cleanly when the numbers did not change, to avoid empty commits.
+          git commit -m "chore: update README cards" || exit 0
+          git push
