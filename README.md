@@ -69,7 +69,6 @@
 ### Sobre mí
 
 - Estudio el **CFGS de Desarrollo de Aplicaciones Multiplataforma (DAM)**.
-- Desde octubre de 2026 trabajo como **desarrollador en CEFYE**, a cargo de 4 proyectos de programación: un sistema de gestión interna, dos chatbots y el aula virtual.
 - Me gusta construir backends, diseñar bases de datos y mantener mi propia infraestructura en casa.
 - Ahora aprendiendo: Android (Kotlin), JPA y Odoo.
 
